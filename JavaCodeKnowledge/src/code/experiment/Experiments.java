@@ -30,9 +30,10 @@ public class Experiments {
 		System.out.println("projectDevelopementType --> " + props.getProperty("project.developementType"));
 
 		// copy file from one folder to another
-
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
 		File source = new File("D:\\fileshare\\inspectmind_docs\\ftp\\User_Dump.csv");
-		File dest = new File("D:/home/InspectMind/lwb_docs/processed/project/User_Dump.csv");
+		File dest = new File("D:/home/InspectMind/lwb_docs/processed/project");
 		if (!dest.exists()) {
 			boolean result = false;
 			dest.mkdir();
@@ -44,7 +45,11 @@ public class Experiments {
 			System.out.println("DIR already exist");
 		}
 		try {
-			FileUtils.copyFile(source, dest);
+			System.out.println("dest ---> " + dest.getAbsolutePath());
+			System.out.println(dest.getCanonicalPath() + "    " + dest.getPath() + "   " + dest.getName() + "   "
+					+ dest.getFreeSpace() + "   " + dest.getTotalSpace());
+			FileUtils.copyFile(source,
+					new File(dest.getAbsolutePath() + "/User_Dump" + formatter.format(date) + ".csv"));
 		} finally {
 		}
 
@@ -57,9 +62,9 @@ public class Experiments {
 				+ new Double(Double.valueOf(teamSize)).longValue() + "    " + team_1);
 
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-		Date date = new Date();
-		System.out.println(formatter.format(date));
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date newdate = new Date();
+		System.out.println(simpleDateFormat.format(newdate));
 		System.out.println(new Date() + "    " + timeStamp);
 
 // 		Execution time calculation 
