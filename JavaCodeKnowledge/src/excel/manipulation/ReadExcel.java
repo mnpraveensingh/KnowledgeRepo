@@ -12,6 +12,10 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * @author M1047624
+ *
+ */
 public class ReadExcel {
 
 	public static void main(String[] args) throws IOException {
@@ -84,5 +88,19 @@ public class ReadExcel {
 			((Closeable) workbook).close();
 		}
 	}
+	
+//	Total Row Count from CSV File 
+	/*public static void main(String[] args) throws IOException  {
+		File inputF = new File("D:\\fileshare\\inspectmind_docs\\ftp\\DPIA_Project_Details_2019-02-12.csv");
+	      InputStream inputFS = new FileInputStream(inputF);
+	      BufferedReader br = new BufferedReader(new InputStreamReader(inputFS));
+	      // skip the header of the csv
+	      Long count = br.lines().skip(1).count();
+	      System.out.println(count+"    count");
+	      Integer cnt = count.intValue();
+	      System.out.println("cnt    "+cnt);
+	      br.close();
+
+	}*/
 
 }
