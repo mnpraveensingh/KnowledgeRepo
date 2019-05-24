@@ -1,0 +1,98 @@
+From here get the selected value =====> 1st table
+
+<td ><div class="dropdown" style="width:130px;">
+		<select   class="chzn-select selectpicker  box-border height-box audiClass" id="mapId" name="mapId" onchange = "onChangeMapId()">
+		<option value=""><s:message code="label.common.select" text="!Select"/></option> 
+		<c:forEach items="${map}" var="map">			
+			<option value="${map.key}">${map.value}</option>						
+		</c:forEach> 
+		</select>
+		</div> </td>
+
+
+Compare 1st table value with these table td's -----> list contains object of data
+<td class="col2">${object.value} </td>
+
+it will do comparision and show or hide accordingly  -----> 
+function onChangeMapId() {  
+		var mapId = $("#mapId ").val();
+	        $("#projectFilterTable td.col2:contains('" + mapId  + "')").parent().show();
+	        $("#projectFilterTable td.col2:not(:contains('" + mapId  + "'))").parent().hide();
+	};
+
+For clearing dropdown values =====> 
+function clearFilters(data){
+		$(data).closest('tr').find('select').val("");
+		$(data).closest('tr').find(".chzn-select").trigger("chosen:updated");
+		filterProjects();
+		
+	}
+
+
+function filterProjects() {
+// reading filter values using ID  
+		var val_1 = $("#projectNameFilter").val();
+		var val_2 = $("#projectIdFilter").val();
+		var val_3 = $("#accountListFilter").val();
+		var val_4 = $("#engagementModels").val();
+		var val_5 = $("#horizontals").val();
+		var val_6 = $("#digitalOrSmac").val();
+		var val_7 = $("#ownerships").val();
+		
+		var table= $("#projectTable #projectBody");
+	 	table.find('tr').each(function (i) {
+	 		        var val_1_Matches = false;
+	 		        var val_2_Matches = false;
+	 		        var val_3_Matches = false;
+	 		        var val_4_Matches = false;
+	 		        var val_5_Matches = false;
+	 		        var val_6_Matches = false;
+	 		        var val_7_Matches = false;
+	 		        
+			        var $tds = $(this).find('td');
+			        
+// reading td's using index ------> 
+			        var val_1_1 = $tds.eq(0).text().trim();
+			        var val_2_2 = $tds.eq(1).text().trim();
+			        var val_3_3 = $tds.eq(2).text().trim();
+			        var val_4_4 = $tds.eq(3).text().trim();
+			        var val_5_5 = $tds.eq(4).text().trim();
+			        var val_6_6 = $tds.eq(6).text().trim();
+			        var val_7_7 = $tds.eq(7).text().trim();
+			            
+			            if(val_1 ==''|| val_1 ==  val_1_1 ){
+			            	val_1_Matches = true;
+			            }
+			            
+			            if(val_2==''|| val_2 ==  val_2_2 ){
+			            	val_2_Matches = true;
+			            }
+			            
+			            if(val_3==''|| val_3 ==  val_3_3 ){
+			            	val_3_Matches = true;
+			            }
+			            
+			            if(val_4==''|| val_4 ==  val_4_4 ){
+			            	val_4_Matches = true;
+			            }
+			            
+			            if(val_5==''|| val_5 ==  val_5_5 ){
+			            	val_5_Matches = true;
+			            }
+			            
+			            if(val_6==''|| val_6 ==  val_6_6 ){
+			            	val_6_Matches = true;
+			            }
+			            
+			            if(val_7==''|| val_7 ==  var val_7_7 ){
+			            	val_7_Matches = true;
+			            }
+			            
+// Making hide and un hide the row's
+			        	if(val_1_Matches && val_2_Matches && val_3_Matches  && val_4_Matches && val_5_Matches && val_6_Matches && val_7_Matches){
+			        		$(this).show()
+			        	}else{
+			        		$(this).hide()
+			        	}
+			    }); 
+	}; 

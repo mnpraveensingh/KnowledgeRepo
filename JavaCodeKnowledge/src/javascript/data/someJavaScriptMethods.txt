@@ -1,0 +1,50 @@
+for getting length of dropdown ====> 
+					document.getElementById("projectType").options.length
+									
+Itrating dropdown selected values ====>  var foo = []
+					 var count = 0 ;
+					 $('#projectType :selected').each(function(i, selected) {
+					 foo[i] = $(selected).text();
+					 count = count+1 ;})
+
+for reading dropdownlist all values & text and set in map ====> itrate map as well
+
+		var accountNames = new Map();		
+		var ddlArray= new Array();
+		var ddl = document.getElementById('accountListFilter');
+		for (i = 0; i < ddl.options.length; i++) {			
+			accountNames.set(ddl .options[i].value, ddl .options[i].text);		  
+		}
+		var cnt = 0 ;
+		for (var [key, value] of accountNames) { 
+			if(cnt==0){
+				++cnt;
+			}else{
+				console.log("k ---> "+key + ' = v ----> ' + value);
+			}
+			     
+		} 
+Create Array and Itrate it ====> 
+				function iterateProjList(){		
+					var array1 = ['a', 'b', 'c'];
+					array1.forEach(function(element) {
+					  console.log(element);
+					});
+				}
+				
+Iterate Incoming Map ( List under map ) ====>				
+var listItems = '${allProcessApps}';
+	var cnt = 1 ;
+	var count = listItems.split(',').length;
+	console.log("count "+count);
+	$.each(listItems.split(','), function(){
+		if(cnt === count){
+			var item = this.split(']')+"" ;
+			console.log("item "+item.split(',')+"  "+cnt);
+		}else{
+			var item = this.split('[')+"" ;
+			console.log("item "+item.split(',')+"  "+cnt);
+		}
+		
+		  cnt = cnt + 1 ;
+		})

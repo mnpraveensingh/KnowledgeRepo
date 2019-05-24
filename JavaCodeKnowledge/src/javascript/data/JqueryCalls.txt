@@ -1,0 +1,42 @@
+Changing Border and Text Color Dropdown==>
+$("#Id").css("color", "red");
+$("#Id").css('border-color', "red");
+
+Making MultiselectDropDown Disable ===>
+$("#Id").prop('disabled',true).trigger('chosen:updated').prop('disabled',false)
+
+Making single select Disabled ====>
+$("#Id").prop('disabled',true);
+$("#Id").prop('disabled',false); ( After save or submit ) because disabled fields value will not go to back end
+
+Making a readOnly ====>
+$('#Id').attr('readonly', true);
+
+Hiding a field ===>
+document.getElementById("id").style.display = "none";
+
+Disabling Cursor ====>
+$('.class').attr('style','pointer-events: none');
+$('#Id').attr('style','pointer-events: none');
+
+Iterating Data Table ====>
+formDataValidation(submitType){
+var table = $('#tableId').DataTable();
+table.rows().every(function(index, element) {
+var tableRowId = "prefix_"+index+"_Suffix";
+var tableRowCellVal = $('#'+tableRowId).val();
+var checkboxVal = $('#'+checkbox).prop('checked');
+
+if(tableRowCellVal !== undefined && tableRowCellVal.length == 0 && checkboxVal == false){ // based on value it will make as mandatory
+																								with red border
+		        	$("#"+tableRowId).css('border-color', "red");
+		        }else{
+		        	$("#"+tableRowId).css('border-color', "");
+		        } 
+}
+}
+
+While clicking a next page ====> ( Return go to Iterating Data Table for next page )
+$('#projectTable').on( 'draw.dt', function () { 
+		 formDataValidation('save');
+	 });
