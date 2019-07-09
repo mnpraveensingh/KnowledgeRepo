@@ -162,6 +162,9 @@ public class ReadAndWriteExcel {
 		XSSFRow row;
 		Iterator<?> rows = datatypeSheet.rowIterator();
 		int count = 0;
+		CellStyle style = xcelObject.createCellStyle();
+		style.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+	    style.setFillPattern(CellStyle.SOLID_FOREGROUND);
 		while (rows.hasNext()) {
 			int columnCount = 0;
 			row = (XSSFRow) rows.next();
@@ -174,6 +177,7 @@ public class ReadAndWriteExcel {
 						s = row.getCell(i).toString();
 						long l = (long) Double.parseDouble(s);
 						s = "" + l;
+						cell.setCellStyle(style);
 					} else if (row.getCell(i) != null) {
 						s = row.getCell(i).toString();
 					}

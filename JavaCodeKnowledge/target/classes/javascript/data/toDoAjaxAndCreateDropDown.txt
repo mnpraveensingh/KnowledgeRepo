@@ -1,0 +1,33 @@
+Java Script Code ===> 
+$('#campaignId').on('change', function() {
+	var input = $("#input").val();
+	$.ajax({
+		url : '${pageContext.request.contextPath}/admin/getSomeData?input='
+			+ campaignId,
+		type : "get",
+		dataType : "json",
+		success : function(output) {
+			outputResult = output['outputData'];
+			var html = '<option value="">Select</option>';
+			const len = outputResult.length;
+			for (var i = 0; i < len; i++) {
+				html += '<option value="' + outputResult[i] + '">'
+				+ outputResult[i]
+				+ '</option>';
+			}
+			// id of select box
+			$('#selectBox').html(html);
+			$('#selectBox').prop('display', 'none').trigger("chosen:updated");
+		}
+	});
+});
+
+Java Code ====>
+
+@GetMapping(value = { "getSomeData" })
+	public Map<String, Object> getSomeData(Map<String, Object> model,
+			@RequestParam(value = "input", required = false) String input) {
+		// do something
+		model.put("outputData", output);
+		return model;
+	}

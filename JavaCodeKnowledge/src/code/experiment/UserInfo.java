@@ -3,6 +3,8 @@ package code.experiment;
 public class UserInfo {
 	
 
+	public UserInfo() {	}
+
 	@Override
 	public String toString() {
 		return "UserInfo [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + "]";
@@ -33,6 +35,13 @@ public class UserInfo {
 	}
 
 	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public UserInfo(String userId, String firstName, String lastName) {
+		super();
+		this.userId = userId;
+		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 }
