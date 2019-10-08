@@ -26,7 +26,7 @@ public class LinkedListExp {
 	
 	public static void createLinkedKist() {
 		LinkedList<Integer> linkedList = new LinkedList<Integer>();
-		linkedList.add(1);
+		linkedList.add(10);
 		linkedList.add(2);
 		linkedList.add(3);
 		linkedList.add(4);
