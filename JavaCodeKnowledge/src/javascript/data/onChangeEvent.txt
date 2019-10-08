@@ -1,0 +1,17 @@
+On change event ===> ( to read the data from given html object from passing in on change method from html tag )
+function myFunction(thiss){
+	var value = thiss.value ;
+	var value = $(thiss).val();
+	var id = thiss.id ;
+}
+
+function formatDate(thisss){
+		var date = thisss.value;
+		var id = jQuery(thisss).attr("id");
+		let inputDate = new Date(date);
+		var dd = ("0" + inputDate.getDate()).slice(-2);
+		var mm = ("0" + (inputDate.getMonth() + 1)).slice(-2);
+		var newDate = dd+"/"+mm+"/"+inputDate.getFullYear();
+		console.log("newDate   "+newDate);
+		console.log("value   "+document.getElementById(id).value);
+	}

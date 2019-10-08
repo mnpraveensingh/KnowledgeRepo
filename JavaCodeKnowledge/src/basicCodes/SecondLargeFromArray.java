@@ -3,7 +3,7 @@ package basicCodes;
 public class SecondLargeFromArray {
 
 	public static void main(String[] args) {
-		int[] arr = {3 , 5 , 2 , 1 , 10};
+		int[] arr = {3 , 5 , 2 , 1 , 10 , 100 , 99};
 		int large = 0 ;
 		int secLarge = 0 ;
 		if(arr[0]>arr[1]) {
