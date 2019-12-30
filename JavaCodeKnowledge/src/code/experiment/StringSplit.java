@@ -18,10 +18,16 @@ public class StringSplit {
 				.trim();
 		String templateId = str1.trim()
 				.substring(str1.lastIndexOf("(") + 1,
-						str1.length() - 1)
-				.trim();
+						str1.length() - 1).trim();
+		
+		String MID = str.trim()
+				.substring(str.lastIndexOf("(") + 1,
+						str.length() - 1).trim();
+		
 		System.out.println("templateName   "+templateName);
 		System.out.println("templateId   "+templateId);
+		
+		System.out.println("MID   "+MID);
 
 	}
 
