@@ -20,6 +20,9 @@ public class StringSplit {
 				.substring(str1.lastIndexOf("(") + 1,
 						str1.length() - 1).trim();
 		
+		String spltstr = str.substring(str.lastIndexOf("(") + 1, str.length() - 1).trim();
+		System.out.println("spltstr "+spltstr);
+		
 		String MID = str.trim()
 				.substring(str.lastIndexOf("(") + 1,
 						str.length() - 1).trim();
@@ -28,6 +31,11 @@ public class StringSplit {
 		System.out.println("templateId   "+templateId);
 		
 		System.out.println("MID   "+MID);
+		
+		String s1 = "Laa Cascade 8th cross Roopena Agrahara Bommanhalli police station" ;
+		System.out.println(s1.length());
+		
+		System.out.println(str.replaceAll("[^A-Za-z]", ""));
 
 	}
 

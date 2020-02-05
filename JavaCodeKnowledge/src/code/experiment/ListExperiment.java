@@ -2,7 +2,9 @@ package code.experiment;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -31,12 +33,27 @@ public class ListExperiment {
 		}
 
 		List<UserInfo> list_user = new ArrayList<>();
-		list_user.add(new UserInfo("1", "liquidweb.com", "80000"));
-		list_user.add(new UserInfo("2", "linode.com", "90000"));
-		list_user.add(new UserInfo("3", "digitalocean.com", "120000"));
-		list_user.add(new UserInfo("4", "aws.amazon.com", "200000"));
-		list_user.add(new UserInfo("5", "mkyong.com", "1"));
-
+		list_user.add(new UserInfo("1", "liquidweb.com", "singh"));
+		list_user.add(new UserInfo("2", "linode.com", "sharma"));
+		list_user.add(new UserInfo("3", "digitalocean.com", "rao"));
+		list_user.add(new UserInfo("4", "aws.amazon.com", "roy"));
+		list_user.add(new UserInfo("5", "mkyong.com", "jain"));
+		System.out.println("\n\n");
+		System.out.println("before sort : ");
+		list_user.forEach(action -> {
+			System.out.print(action.getUserId() + " , ");
+		});
+		Collections.sort(list_user, new Comparator<UserInfo>() {
+			@Override
+			public int compare(UserInfo o1, UserInfo o2) {
+				return o1.getUserId().compareTo(o2.getUserId());
+			}
+		}.reversed());
+		System.out.println("\nafter sort : ");
+		list_user.forEach(action -> {
+			System.out.print(action.getUserId() + " , ");
+		});
+		System.out.println("\n\n");
 //		Creating map from the object
 		Map<String, String> result1 = list_user.stream()
 				.collect(Collectors.toMap(UserInfo::getUserId, UserInfo::getFirstName));
@@ -54,6 +71,16 @@ public class ListExperiment {
 		Set<UserInfo> userInfoSet = list_user.stream()
 				.collect(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(UserInfo::getUserId))));
 		System.out.println("userInfoSet  " + userInfoSet);
+
+		Map<String, List<String>> map = new HashMap<String, List<String>>();
+		List<String> list_1 = new ArrayList<String>();
+		list_1.add("Singh");
+		map.put("pravin", list_1);
+		System.out.println(map);
+		if (map.containsKey("pravin")) {
+			map.get("pravin").add("Usha");
+		}
+		System.out.println(map);
 	}
 
 }

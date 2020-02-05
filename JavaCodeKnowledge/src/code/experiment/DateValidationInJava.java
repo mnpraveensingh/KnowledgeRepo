@@ -21,14 +21,17 @@ import constant.Constant;
  */
 public class DateValidationInJava {
 
+	static Logger logger = Logger.getLogger(DateValidationInJava.class.getName());
 
-static Logger logger = Logger.getLogger(DateValidationInJava.class.getName());
 	public static void main(String[] args) throws ParseException {
 
 //		String dateInString = "03/31/2014 00:00";
-		String dateInString = "2008-06-02";
-		Date newDate = DateUtils.parseDate(dateInString, 
-				  new String[] { "yyyy-MM-dd HH:mm:ss", "M/d/yyyy" , "M/d/yyyy h:mm" , "yyyy-MM-dd"});
+//		String dateInString = "2008-06-02";
+		String dateInString = "1/9/2020";
+		Date newDate = DateUtils.parseDate(dateInString, new String[] { "yyyy-MM-dd HH:mm:ss", "M/d/yyyy",
+				"M/d/yyyy h:mm", "yyyy-MM-dd", "M/dd/yyyy", "MM/dd/yyyy", "dd/MM/yyyy", "d/M/yyyy" });
+		LocalDate LocalDate = newDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		System.out.println("LocalDate " + LocalDate);
 		Instant instant = newDate.toInstant();
 		ZonedDateTime zdt = instant.atZone(ZoneId.systemDefault());
 		LocalDate date1 = zdt.toLocalDate();
@@ -37,23 +40,23 @@ static Logger logger = Logger.getLogger(DateValidationInJava.class.getName());
 		String modifiedDate = null;
 		try {
 
-          Date date_1 = simpleFormatter.parse(""+date1);
-          modifiedDate = newSimpleFormatter.format(date_1);
-          logger.info("modifiedDate ---- > " +modifiedDate);
-          DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy h:mm");
-          LocalDate localDate = LocalDate.parse(modifiedDate, formatter);
-          logger.info("localDate ---- > " +localDate);
-      } catch (ParseException e) {
-          e.printStackTrace();
-      }
+			Date date_1 = simpleFormatter.parse("" + date1);
+			modifiedDate = newSimpleFormatter.format(date_1);
+			logger.info("modifiedDate ---- > " + modifiedDate);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy h:mm");
+			LocalDate localDate = LocalDate.parse(modifiedDate, formatter);
+			logger.info("localDate ---- > " + localDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		yearDateMonthTypeDateFormate();
 	}
-	
+
 	private static void yearDateMonthTypeDateFormate() throws ParseException {
-		String projectCreatedDateTo="2019-08-30"; // 2008-06-02
-		String projectCreatedDateFrom="2019-07-01";
+		String projectCreatedDateTo = "2019-08-30"; // 2008-06-02
+		String projectCreatedDateFrom = "2019-07-01";
 		Date to = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(projectCreatedDateTo);
 		Date from = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(projectCreatedDateFrom);
-		System.out.println(Constant.GREEN_BOLD+"From   "+from+"   To  "+to);
+		System.out.println(Constant.GREEN_BOLD + "From   " + from + "   To  " + to);
 	}
 }

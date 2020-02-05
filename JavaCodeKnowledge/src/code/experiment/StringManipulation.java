@@ -49,6 +49,11 @@ public class StringManipulation {
 		System.out.println("after "+unCommon.size());
 		System.out.println("unCommon "+unCommon);
 		
+		String s = "pravin singh";
+		System.out.println(s.contains("pravin"));
+		System.out.println(s.contains("singh"));
+		System.out.println(s.contains("usha"));
+		
 	}
 
 }
