@@ -1,0 +1,46 @@
+To remove all files except spesific file ===> 
+1st --> go to inside that folder where need to delete the files
+2nd --> shopt -s extglob
+3rd --> rm -v !("lwbintegration.log") // filename --> which we don't want to delete except given filename all will be deleted
+
+du -sh directory_name    /* Gives you the summarized(-s) size of the directory in human readable(-h) format*/
+du -sh fileName
+du -bsh *                /* Gives you the apparent(-b) summarized(-s) size of all the files and directories in the current directory in 
+							human readable(-h) format*/
+
+login to PUTTY
+----------------
+Check System Utilization (Ubantu) ==> top
+Check Memory usage ==> free
+
+Navigate to InspectMind-FS ===> cd /mnt/InspectMind-FS and run df-h
+run ==> du -csh ( to check size of the folder)
+
+View Tomcat logs
+-----------------
+cd opt/tomcat/logs ( tomcat logs )
+run ===> cat catlina.out
+
+tomcat log 
+--------------
+--- log rotation
+--- 100 MB files[10]
+--- Older files deleted
+--- catlina.out
+
+df -h ( to show the complete (available , aloted , used) size list )
+du -csh ( size )
+rm - rf filename ( delete )
+
+vim mongo_backup.sh ---> see the script
+
+
+home/InspectMind/script
+crontab -e ( to see the schedule script time )
+
+edit the cron job
+-------------------
+->crontab -e -> esc i -> remove the content which not required -> :wq -> enter
+for exit editor-> :quit -> enter
+
+nfs backup --> mnt/inspectmind-fs

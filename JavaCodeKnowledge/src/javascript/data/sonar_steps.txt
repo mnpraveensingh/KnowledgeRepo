@@ -1,0 +1,3 @@
+Open Sonar Zip -> go to conf -> change sonar.web.port = 9090 -> under windows-x86-64 -> go to bin -> run StartSonar.bat -> localhost:9090 in web
+go to pkg where need to apply sonar and give mvn build and run the below cmd and see the logs in sonar ( Critical , Major , Minor , Blocker , Info )
+mvn sonar:sonar -Dsonar.host.url=http://localhost:9090

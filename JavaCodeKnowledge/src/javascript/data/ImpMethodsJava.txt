@@ -1,0 +1,10 @@
+new Throwable().getStackTrace()[0].getLineNumber() 			 	===> for getting line number
+new Throwable().getStackTrace()[0].getMethodName()  			===> for getting current method name
+new Object() { }.getClass().getEnclosingClass().getSimpleName() ===> for getting class name from Static method
+sheet.getPhysicalNumberOfRows(); ===> getting total count of rows in excel
+
+skiping test while mvn build  ===> mvn clean install -Dmaven.test.skip=true
+executing java application using jar file ===> java -Dfile.encoding=UTF-8 -jar gs-spring-boot-0.1.0.jar
+executing java application using jar file ===> java -Dfile.encoding=UTF-8 -jar lwb-integration.jar
+											   java -Dfile.encoding=UTF-8 -jar inspectmind.war
+											   java -Dfile.encoding=UTF-8 -jar lwb-api-0.0.1-SNAPSHOT.jar

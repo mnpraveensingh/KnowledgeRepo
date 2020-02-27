@@ -36,6 +36,7 @@ public class StringSplit {
 		System.out.println(s1.length());
 		
 		System.out.println(str.replaceAll("[^A-Za-z]", ""));
+		System.out.println(str.replaceAll("\\.", ""));
 
 	}
 

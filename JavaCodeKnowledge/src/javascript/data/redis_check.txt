@@ -1,0 +1,32 @@
+service redis-server restart
+
+sudo systemctl restart redis --> Ubuntu
+
+
+var/lib/redis/dump.rdb
+etc/redis/redis.conf
+
+ ps -ef | grep redis
+ kill -9 1205 ( 1205 is id, to get the id -> first number after execcution of above cmd and -9 is force to kill)
+ service redis-server stop
+ service redis-server start
+ cat redis-server
+ vim redis-server
+ 
+ 
+ cat tomcat
+ vim tomcat 
+ etc/logrotate.d --> below code set inside given directory after executing {vim tomcat} command in edit mode and save the changes
+ /opt/tomcat/logs/catalina*.out {
+        copytruncate
+        daily
+        missingok
+        rotate 7
+        compress
+        size 500M
+}
+etc/logrotate.d -> vim tomcat -> then change the content in script according to requirement and run below command
+/usr/sbin/logrotate /etc/logrotate.conf
+
+
+

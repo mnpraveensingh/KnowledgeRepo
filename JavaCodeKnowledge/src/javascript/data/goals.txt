@@ -1,0 +1,46 @@
+1.1	Design  				1. Understand requirements, architecture, high level design and create low level design for assigned functionality 
+							2. Study various solution approaches to implement a given requirement
+			
+1.2	Requirements  			1. Identify, understand and analyze technical problems upfront, given requirements / change requests / defects & design 
+							2. Solve technical problems - reading, assistance from senior team members 
+							3. Strive to minimize the number of defects arising due to inadequate understanding of the requirements. Participated in requirements discussion sessions 
+							4. Provide initial estimates on time, effort, complexity for activities in scope
+					
+					
+1.3	Coding					1. Ensure code quality in your area of responsibility. Use of sonarqube for inspection of code quality to be implemented.
+							2. Develop debugging and defect fixing skills
+					
+					
+1.4	Build and deployment	1. Ensure a smooth build and deployment process by minimizing build failures 
+							2. Minimize high or severe deployment issues
+					
+1.5	Schedule Adherence		1. Ensure timely completion of all deliverables.
+							2. Proactively report any effort variance foreseen, accurately to the leads and resolve them.
+							3. Discussing and helping the end user about the application and resolving issues on time.
+							4. Take ownership for the application in future and work on any enhancements by discussing with senior members. Providing proper estimates for each enhancement depending on the priority to complete the work on time.
+					
+					
+1.6	Personal Development	1. Complete 201 courses in yorbit to be eligible for promotion by next appraisal cycle.
+							2. Learning any new technology or updating the existing one.
+								
+
+1.7 Process :
+							1. Follow processes, guidelines, and best practices as prescribed for the project
+							2. 100% adherence to the configuration management practices defined for the project
+							3. Participate in peer-level design and code reviews from within or outside the project
+							4. Ensure > 90% coverage in design and code reviews
+							5. Anchor design reviews, code review of junior team members from within or outside the project, ensure less than 1% bugs (of any kind) due to incorrect reviews
+
+1.8 Maintenance :
+							1. Respond to Incidents, User Requests within the Acknowledgement SLA
+							2. Analysis of Incident Tickets / Defects / Enhancements requests or User queries
+							3. Verify Known Error Database (KEDB) and apply the known fixes or work-arounds
+							4. Timely updates to  Known Error Database (KEDB), Application Run Book, Application Handbook, Design documentation, Process Documentation
+							5. Provide solutions to résolve issues – DML Fix / Code Fix / Configuration change
+							6. Ensure Unit Testing & Code Reviews are done and comments are incorporated
+							7. Implementation of Major Enhancements as per the defined SDLC processes
+							8. Refactoring of source code for improving maintainability
+							9. Strengthen the application logging features
+							10. Setting up of appropriate thresholds and alerts on Operating System
+							11. Proactive analysis of OS parameters – Memory, CPU and Disk utilization on key environments
+							12. Document the changes to existing application as per the agreed standards
